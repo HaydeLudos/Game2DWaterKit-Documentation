@@ -1,0 +1,1879 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Fast, beautiful, dynamic, and interactive 2D water and waterfall systems for Unity">
+      
+      
+        <link rel="canonical" href="https://www.game2dwaterkit.haydeludos.com/water-system/water-visuals/">
+      
+      
+        <meta name="author" content="Haydeludos">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Water Visuals - Game 2D Water Kit for Unity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/demo.css">
+    
+      <link rel="stylesheet" href="../../css/pdfexport.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-152555769-1", "game2dwaterkit.haydeludos.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#tweaking-the-water-visuals" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.game2dwaterkit.haydeludos.com" title="Game 2D Water Kit for Unity" aria-label="Game 2D Water Kit for Unity" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Game 2D Water Kit for Unity
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Water Visuals
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          Home
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          Water System
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../waterfall-system/" class="md-tabs__link">
+          Waterfall System
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../upgrade-render-pipeline/" class="md-tabs__link">
+          Upgrade To URP (LWRP)
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../demo/" class="md-tabs__link">
+          Demo
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../contact/" class="md-tabs__link">
+          Get in Touch
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://assetstore.unity.com/packages/2d/textures-materials/water/game-2d-water-kit-118057?aid=1100l8AsD&pubref=website" class="md-tabs__link">
+          Asset Store Page
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.game2dwaterkit.haydeludos.com" title="Game 2D Water Kit for Unity" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../images/logo.png" width="48" height="48">
+      
+    </a>
+    Game 2D Water Kit for Unity
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Water System" class="md-nav__link">
+      Water System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waterfall-system/" title="Waterfall System" class="md-nav__link">
+      Waterfall System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../upgrade-render-pipeline/" title="Upgrade To URP (LWRP)" class="md-nav__link">
+      Upgrade To URP (LWRP)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Water System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Water System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Water Visuals
+      </label>
+    
+    <a href="./" title="Water Visuals" class="md-nav__link md-nav__link--active">
+      Water Visuals
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-well-cover-on-this-page" class="md-nav__link">
+    What we'll cover on this page?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-body" class="md-nav__link">
+    Water Body
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-color" class="md-nav__link">
+    Body Color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture" class="md-nav__link">
+    Body Texture
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-sheet-properties" class="md-nav__link">
+    Body Texture Sheet Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-opacity" class="md-nav__link">
+    Body Texture Opacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-scrolling-speed" class="md-nav__link">
+    Body Texture Scrolling Speed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-tiling-mode" class="md-nav__link">
+    Body Texture Tiling Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-offset" class="md-nav__link">
+    Body Texture Offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-distortion-effect" class="md-nav__link">
+    Body Texture Distortion Effect
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distortion-scale-offset" class="md-nav__link">
+    Distortion Scale - Offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-strength" class="md-nav__link">
+    Distortion Strength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-speed" class="md-nav__link">
+    Distortion Speed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-tiling" class="md-nav__link">
+    Distortion Tiling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-surface" class="md-nav__link">
+    Water Surface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#surface-thickness" class="md-nav__link">
+    Surface Thickness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-color-and-texture" class="md-nav__link">
+    Surface Color and Texture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-refraction" class="md-nav__link">
+    Water Refraction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refraction-bending" class="md-nav__link">
+    Refraction Bending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refraction-distortion-effect" class="md-nav__link">
+    Refraction Distortion Effect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refraction-layers" class="md-nav__link">
+    Refraction Layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refraction-render-texture-properties" class="md-nav__link">
+    Refraction Render-Texture Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-reflection" class="md-nav__link">
+    Water Reflection
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reflection-visibility" class="md-nav__link">
+    Reflection Visibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-fade" class="md-nav__link">
+    Reflection Fade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-distortion-effect" class="md-nav__link">
+    Reflection Distortion Effect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-layers" class="md-nav__link">
+    Reflection Layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-render-texture-properties" class="md-nav__link">
+    Reflection Render-Texture Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-frustum-properties" class="md-nav__link">
+    Reflection Frustum Properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frustum-z-offset" class="md-nav__link">
+    Frustum Z-Offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frustum-height-scaling-factor" class="md-nav__link">
+    Frustum Height Scaling Factor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-fake-perspective-effect" class="md-nav__link">
+    Water Fake Perspective Effect
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-layers" class="md-nav__link">
+    Fake Perspective Effect Layers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-refraction-layers" class="md-nav__link">
+    Fake Perspective Effect - Refraction Layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-reflection-layers" class="md-nav__link">
+    Fake Perspective Effect - Reflection Layers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-reflection-view-frustum-properties" class="md-nav__link">
+    Fake Perspective Effect - Reflection View Frustum Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-emission-effect" class="md-nav__link">
+    Water Emission Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendering-properties" class="md-nav__link">
+    Rendering Properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendering-properties-material-inspector" class="md-nav__link">
+    Rendering Properties - Material Inspector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-properties-component-inspector" class="md-nav__link">
+    Rendering Properties - Component Inspector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../water-simulation/" title="Water Simulation" class="md-nav__link">
+      Water Simulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../water-size-animation/" title="Water Size Animation" class="md-nav__link">
+      Water Size Animation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../large-water-area-manager/" title="Large Water Area" class="md-nav__link">
+      Large Water Area
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../prefab-utility/" title="Prefab Utility" class="md-nav__link">
+      Prefab Utility
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Waterfall System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Waterfall System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waterfall-system/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waterfall-system/waterfall-visuals/" title="Waterfall Visuals" class="md-nav__link">
+      Waterfall Visuals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waterfall-system/waterfall-simulation/" title="Waterfall Simulation" class="md-nav__link">
+      Waterfall Simulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waterfall-system/waterfall-size-animation/" title="Waterfall Size Animation" class="md-nav__link">
+      Waterfall Size Animation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../waterfall-system/prefab-utility/" title="Prefab Utility" class="md-nav__link">
+      Prefab Utility
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Upgrade To URP (LWRP)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Upgrade To URP (LWRP)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../upgrade-render-pipeline/" title="Upgrade to URP (LWRP)" class="md-nav__link">
+      Upgrade to URP (LWRP)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Demo
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Demo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../demo/" title="Demo" class="md-nav__link">
+      Demo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Get in Touch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Get in Touch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contact/" title="Get In Touch" class="md-nav__link">
+      Get In Touch
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Asset Store Page
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Asset Store Page
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://assetstore.unity.com/packages/2d/textures-materials/water/game-2d-water-kit-118057?aid=1100l8AsD&pubref=website" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-well-cover-on-this-page" class="md-nav__link">
+    What we'll cover on this page?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-body" class="md-nav__link">
+    Water Body
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-color" class="md-nav__link">
+    Body Color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture" class="md-nav__link">
+    Body Texture
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-sheet-properties" class="md-nav__link">
+    Body Texture Sheet Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-opacity" class="md-nav__link">
+    Body Texture Opacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-scrolling-speed" class="md-nav__link">
+    Body Texture Scrolling Speed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-tiling-mode" class="md-nav__link">
+    Body Texture Tiling Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-offset" class="md-nav__link">
+    Body Texture Offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-texture-distortion-effect" class="md-nav__link">
+    Body Texture Distortion Effect
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distortion-scale-offset" class="md-nav__link">
+    Distortion Scale - Offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-strength" class="md-nav__link">
+    Distortion Strength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-speed" class="md-nav__link">
+    Distortion Speed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-tiling" class="md-nav__link">
+    Distortion Tiling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-surface" class="md-nav__link">
+    Water Surface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#surface-thickness" class="md-nav__link">
+    Surface Thickness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-color-and-texture" class="md-nav__link">
+    Surface Color and Texture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-refraction" class="md-nav__link">
+    Water Refraction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refraction-bending" class="md-nav__link">
+    Refraction Bending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refraction-distortion-effect" class="md-nav__link">
+    Refraction Distortion Effect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refraction-layers" class="md-nav__link">
+    Refraction Layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refraction-render-texture-properties" class="md-nav__link">
+    Refraction Render-Texture Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-reflection" class="md-nav__link">
+    Water Reflection
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reflection-visibility" class="md-nav__link">
+    Reflection Visibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-fade" class="md-nav__link">
+    Reflection Fade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-distortion-effect" class="md-nav__link">
+    Reflection Distortion Effect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-layers" class="md-nav__link">
+    Reflection Layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-render-texture-properties" class="md-nav__link">
+    Reflection Render-Texture Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-frustum-properties" class="md-nav__link">
+    Reflection Frustum Properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frustum-z-offset" class="md-nav__link">
+    Frustum Z-Offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frustum-height-scaling-factor" class="md-nav__link">
+    Frustum Height Scaling Factor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-fake-perspective-effect" class="md-nav__link">
+    Water Fake Perspective Effect
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-layers" class="md-nav__link">
+    Fake Perspective Effect Layers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-refraction-layers" class="md-nav__link">
+    Fake Perspective Effect - Refraction Layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-reflection-layers" class="md-nav__link">
+    Fake Perspective Effect - Reflection Layers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fake-perspective-effect-reflection-view-frustum-properties" class="md-nav__link">
+    Fake Perspective Effect - Reflection View Frustum Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-emission-effect" class="md-nav__link">
+    Water Emission Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendering-properties" class="md-nav__link">
+    Rendering Properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendering-properties-material-inspector" class="md-nav__link">
+    Rendering Properties - Material Inspector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-properties-component-inspector" class="md-nav__link">
+    Rendering Properties - Component Inspector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="tweaking-the-water-visuals">Tweaking The Water Visuals<a class="headerlink" href="#tweaking-the-water-visuals" title="Permanent link">&para;</a></h1>
+<p><img alt="Tweaking Water Visual Aspect Example" src="../images/visual-aspect-preview.PNG" /></p>
+<h2 id="what-well-cover-on-this-page">What we'll cover on this page?<a class="headerlink" href="#what-well-cover-on-this-page" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#water-body">Water Body Properties</a></li>
+<li><a href="#water-surface">Water Surface Properties</a></li>
+<li><a href="#water-refraction">Water Refraction Properties</a></li>
+<li><a href="#water-reflection">Water Reflection Properties</a></li>
+<li><a href="#water-fake-perspective-effect">Water Fake Perspective Effect Properties</a></li>
+<li><a href="#water-emission-effect">Water Emission Effect Properties</a></li>
+<li><a href="#rendering-properties">Water Rendering Properties Properties</a></li>
+</ul>
+<h2 id="water-body">Water Body<a class="headerlink" href="#water-body" title="Permanent link">&para;</a></h2>
+<p><img alt="Tweaking Water Body Color And Texture in the water material inspector" src="../images/material-water-body.PNG" title="Setting Water Body Color/Texture properties" /></p>
+<h3 id="body-color">Body Color<a class="headerlink" href="#body-color" title="Permanent link">&para;</a></h3>
+<p><img alt="Water Material Color Properties" src="../images/material-color-properties.PNG" /></p>
+<p>We can set the water body color to either a <em>Solid Color</em> or a <em>Gradient Color</em>. If we choose to use a <em>Gradient Color</em>, the <strong><em>Gradient Offset</em></strong> property controls how much to shift the gradient-line midpoint position (where the middle of the color transition should be).</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The <strong><em>Gradient Offset</em></strong> property range: <strong>-0.5 &rarr; 0.5</strong></p>
+</div>
+<h3 id="body-texture">Body Texture<a class="headerlink" href="#body-texture" title="Permanent link">&para;</a></h3>
+<p><img alt="Water Material Texture Properties" src="../images/material-texture-properties.PNG" /></p>
+<p>We can apply a texture across the water body.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The texture should have its wrap-mode set to <em>Repeat</em> or <em>Mirror</em> in the texture import settings.</p>
+</div>
+<h4 id="body-texture-sheet-properties">Body Texture Sheet Properties<a class="headerlink" href="#body-texture-sheet-properties" title="Permanent link">&para;</a></h4>
+<p>This texture could be a <em>regular</em> texture, or a texture-sheet (a texture consisting of many frames) by toggling the <strong><em>Is A Texture Sheet</em></strong> property on, and then specifying the number of columns and rows and also setting how many frames to play per second.</p>
+<h4 id="body-texture-opacity">Body Texture Opacity<a class="headerlink" href="#body-texture-opacity" title="Permanent link">&para;</a></h4>
+<p>The <strong><em>Opacity</em></strong> property controls the visibility of the texture.</p>
+<h4 id="body-texture-scrolling-speed">Body Texture Scrolling Speed<a class="headerlink" href="#body-texture-scrolling-speed" title="Permanent link">&para;</a></h4>
+<p>We can make the texture scroll, in the X and/or the Y directions, by tweaking the <strong><em>Scrolling Speed</em></strong> property.</p>
+<h4 id="body-texture-tiling-mode">Body Texture Tiling Mode<a class="headerlink" href="#body-texture-tiling-mode" title="Permanent link">&para;</a></h4>
+<p>Regarding the texture tiling properties, there are two tiling modes:</p>
+<ul>
+<li>
+<p><strong>Stretch:</strong>
+    The texture stretches when the water object size changes, always keeping the same number of tiles we specify for the X and Y directions.</p>
+<p><img alt="Texture Stretch Tiling Mode Properties" src="../images/material-texture-tiling-mode-stretch.PNG" /></p>
+</li>
+<li>
+<p><strong>Repeat:</strong>
+    The texture repeats when the water object size changes. In this mode, we specify the scale in units of a single tile.</p>
+<p><img alt="Texture Repeat Tiling Mode Properties" src="../images/material-texture-tiling-mode-repeat.PNG" /></p>
+</li>
+</ul>
+<h4 id="body-texture-offset">Body Texture Offset<a class="headerlink" href="#body-texture-offset" title="Permanent link">&para;</a></h4>
+<p>We can provide a texture offset regardless of the selected texture <strong><em>Tiling Mode</em></strong>.</p>
+<h4 id="body-texture-distortion-effect">Body Texture Distortion Effect<a class="headerlink" href="#body-texture-distortion-effect" title="Permanent link">&para;</a></h4>
+<p><img alt="Distortion Effect Properties" src="../images/distortion-properties.PNG" /></p>
+<h5 id="distortion-scale-offset">Distortion Scale - Offset<a class="headerlink" href="#distortion-scale-offset" title="Permanent link">&para;</a></h5>
+<p>The Mathf.PerlinNoise(x,y) function is used to <em>sample</em> the Perlin noise texture values. The <strong><em>Scale</em></strong> and <strong><em>Offset</em></strong> properties controls the sampled area size and origin, respectively.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <strong><em>Scale</em></strong> And <strong><em>Offset</em></strong> properties are used to generate the noise texture (which actually happens only in the editor), and as such they are not animatable.</p>
+</div>
+<h5 id="distortion-strength">Distortion Strength<a class="headerlink" href="#distortion-strength" title="Permanent link">&para;</a></h5>
+<p>The <strong><em>Strength</em></strong> property, as the name suggests, controls how strong the distortion effect is.</p>
+<h5 id="distortion-speed">Distortion Speed<a class="headerlink" href="#distortion-speed" title="Permanent link">&para;</a></h5>
+<p>The <strong><em>Speed</em></strong> property controls the noise texture scrolling speed.</p>
+<h5 id="distortion-tiling">Distortion Tiling<a class="headerlink" href="#distortion-tiling" title="Permanent link">&para;</a></h5>
+<p>The <strong><em>Tiling</em></strong> property controls the scale of a noise texture tile relative to a water body texture tile.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>A value of <strong>0.5</strong>, for both the X and Y axis, will apply the noise texture across <strong>4</strong> water body texture tiles.</p>
+<p><img alt="Distortion Tiling Property Example" src="../images/distortion-tiling.PNG" /></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can use the <strong><em>Tiling</em></strong> property to lower the distortion strength across one axis, and keep the full strength across the other.</p>
+</div>
+<h2 id="water-surface">Water Surface<a class="headerlink" href="#water-surface" title="Permanent link">&para;</a></h2>
+<p><img alt="Tweaking Water Surface Thickness, Color And Texture in the water material inspector" src="../images/material-water-surface.PNG" /></p>
+<h3 id="surface-thickness">Surface Thickness<a class="headerlink" href="#surface-thickness" title="Permanent link">&para;</a></h3>
+<p><img alt="Tweaking Water Surface Thickness" src="../images/material-water-surface-thickness.PNG" /></p>
+<p>The <strong><em>Thickness</em></strong> property sets the thickness of the surface line. The thickness can be either <em>Absolute</em> or <em>Relative</em> to the water height.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">HasAbsoluteSurfaceThickness</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">SurfaceThickness</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>
+<span class="c1">// or match the surface level to a world space position</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">SurfaceThickness</span> <span class="p">=</span> <span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">TransformPointWorldSpaceToSurfaceThickness</span><span class="p">(</span><span class="n">worldPoint</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will look into the <strong><em>Submerge Level</em></strong> property later when we go through the water fake perspective effect properties, <a href="#water-fake-perspective-effect">here</a>.</p>
+</div>
+<h3 id="surface-color-and-texture">Surface Color and Texture<a class="headerlink" href="#surface-color-and-texture" title="Permanent link">&para;</a></h3>
+<p><img alt="Tweaking Water Surface Color And Texture" src="../images/material-water-surface-color-texture.PNG" /></p>
+<p>Just like the water body, we can tweak the surface tint color and apply a texture across the surface.</p>
+<p>The description of the surface color and texture properties is exactly the same as the water body texture properties, as discussed <a href="#body-color">here</a>.</p>
+<h2 id="water-refraction">Water Refraction<a class="headerlink" href="#water-refraction" title="Permanent link">&para;</a></h2>
+<p><img alt="Tweaking Water Refraction" src="../images/material-water-refraction.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">IsRefractionEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="refraction-bending">Refraction Bending<a class="headerlink" href="#refraction-bending" title="Permanent link">&para;</a></h3>
+<p>The bending property controls how much we would like to shift the submerged portion of an object relative to the other portion above the water.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="Water Refraction Bending Property Example" src="../images/material-refraction-bending-property-example.PNG" /></p>
+</div>
+<h3 id="refraction-distortion-effect">Refraction Distortion Effect<a class="headerlink" href="#refraction-distortion-effect" title="Permanent link">&para;</a></h3>
+<p><img alt="Water Refraction Distortion Properties" src="../images/material-water-refraction-distortion-properties.PNG" /></p>
+<p>The refraction distortion properties description is the same as the water body distortion effect properties, discussed <a href="#body-texture-distortion-effect">here</a>.</p>
+<h3 id="refraction-layers">Refraction Layers<a class="headerlink" href="#refraction-layers" title="Permanent link">&para;</a></h3>
+<p>We select which layers to include in the refraction rendering using the <strong><em>Objects To Render</em></strong> property under the <strong>Refraction Properties</strong> in the water component inspector.</p>
+<p><img alt="Tweaking Water Refraction Layer Mask and Render-Texture Properties" src="../images/component-water-refraction-layers.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Refraction</span><span class="p">.</span><span class="n">CullingMask</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">GetMask</span><span class="p">(</span><span class="s">&quot;Default&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="refraction-render-texture-properties">Refraction Render-Texture Properties<a class="headerlink" href="#refraction-render-texture-properties" title="Permanent link">&para;</a></h3>
+<p>If the <strong><em>Use Fixed Size</em></strong> property is toggled on, the <strong><em>Size</em></strong> property sets the refraction render-texture width and height.</p>
+<p><img alt="Use Refraction Render-Texture Fixed Size" src="../images/component-render-texture-use-fixed-size-checked.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Refraction</span><span class="p">.</span><span class="n">RenderTextureUseFixedSize</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Refraction</span><span class="p">.</span><span class="n">RenderTextureFixedSize</span> <span class="p">=</span> <span class="m">512</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<p>But, if the <strong><em>Use Fixed Size</em></strong> property is toggled off, the refraction render-texture will have a dynamic size, and the render-texture width and height are in this case equal to the the water object visible area on screen width and height. We can even downscale this computed size by lowering the <strong><em>Resizing Factor</em></strong> property value.</p>
+<p><img alt="Use Refraction Render-Texture Dynamic Size" src="../images/component-render-texture-use-fixed-size-unchecked.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Refraction</span><span class="p">.</span><span class="n">RenderTextureUseFixedSize</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Refraction</span><span class="p">.</span><span class="n">RenderTextureResizingFactor</span> <span class="p">=</span> <span class="m">0.75f</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<p>Lastly, We can set the refraction render-texture <strong><em>Filter Mode</em></strong> property to either <em>Bilinear</em> or <em>Point</em>.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Refraction</span><span class="p">.</span><span class="n">RenderTextureFilterMode</span> <span class="p">=</span> <span class="n">FilterMode</span><span class="p">.</span><span class="n">Bilinear</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h2 id="water-reflection">Water Reflection<a class="headerlink" href="#water-reflection" title="Permanent link">&para;</a></h2>
+<p><img alt="Tweaking Water Reflection" src="../images/material-water-reflection.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">IsReflectionEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="reflection-visibility">Reflection Visibility<a class="headerlink" href="#reflection-visibility" title="Permanent link">&para;</a></h3>
+<p>We control the visibility of the rendered reflection image under the <strong>Reflection Properties</strong> in the water material inspector.</p>
+<h3 id="reflection-fade">Reflection Fade<a class="headerlink" href="#reflection-fade" title="Permanent link">&para;</a></h3>
+<p><img alt="Tweaking Water Reflection Fade" src="../images/material-water-reflection-fade.PNG" /></p>
+<p>We can make the reflection fade vertically along the water object, starting from the top at full opacity. To do this, we toggle the <strong><em>Fade</em></strong> property on, and proceed to select the desired fade <em>speed</em>:</p>
+<ul>
+<li>Linear</li>
+<li>Exponential - Two</li>
+<li>Exponential - Three</li>
+<li>Exponential - Four</li>
+</ul>
+<h3 id="reflection-distortion-effect">Reflection Distortion Effect<a class="headerlink" href="#reflection-distortion-effect" title="Permanent link">&para;</a></h3>
+<p><img alt="Tweaking Water Reflection Distortion Effect Properties" src="../images/material-water-reflection-distortion-effect.PNG" /></p>
+<p>The reflection distortion properties description is the same as the water body distortion effect properties, as discussed <a href="#body-texture-distortion-effect">here</a>.</p>
+<h3 id="reflection-layers">Reflection Layers<a class="headerlink" href="#reflection-layers" title="Permanent link">&para;</a></h3>
+<p>We use select which layers to include in the reflection rendering using the <strong><em>Objects To Render</em></strong> property under the <strong>Reflection Properties</strong> in the water component inspector.</p>
+<p><img alt="Tweaking Water Reflection Layers" src="../images/component-water-reflection-layers.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">CullingMask</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">GetMask</span><span class="p">(</span><span class="s">&quot;Default&quot;</span><span class="p">,</span> <span class="s">&quot;TransparentFX&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="reflection-render-texture-properties">Reflection Render-Texture Properties<a class="headerlink" href="#reflection-render-texture-properties" title="Permanent link">&para;</a></h3>
+<p>If the <strong><em>Use Fixed Size</em></strong> property is toggled on, the <strong><em>Size</em></strong> property sets the reflection render-texture width and height.</p>
+<p><img alt="Use Refraction Render-Texture Fixed Size" src="../images/component-render-texture-use-fixed-size-checked.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">RenderTextureUseFixedSize</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">RenderTextureFixedSize</span> <span class="p">=</span> <span class="m">512</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<p>Otherwise, the refraction render-texture will have a dynamic size, and the render-texture width and height are equal to the the water object visible area on screen width and height. We can even downscale this computed size by lowering the <strong><em>Resizing Factor</em></strong> property value.</p>
+<p><img alt="Use Reflection Render-Texture Dynamic Size" src="../images/component-render-texture-use-fixed-size-unchecked.PNG" /></p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">RenderTextureUseFixedSize</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">RenderTextureResizingFactor</span> <span class="p">=</span> <span class="m">0.75f</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<p>Lastly, We can set the reflection render-texture <strong><em>Filter Mode</em></strong> property to either <em>Bilinear</em> or <em>Point</em>.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">RenderTextureFilterMode</span> <span class="p">=</span> <span class="n">FilterMode</span><span class="p">.</span><span class="n">Bilinear</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="reflection-frustum-properties">Reflection Frustum Properties<a class="headerlink" href="#reflection-frustum-properties" title="Permanent link">&para;</a></h3>
+<p><img alt="Use Reflection Render-Texture Dynamic Size" src="../images/component-water-reflection-frustum-properties.PNG" /></p>
+<h4 id="frustum-z-offset">Frustum Z-Offset<a class="headerlink" href="#frustum-z-offset" title="Permanent link">&para;</a></h4>
+<p>The <strong><em>Z-Offset</em></strong> property controls where to start rendering the water reflection relative to the water object position. This might be useful if we would like to render the reflection of certain objects that are in front of the water object.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">ReflectionZOffset</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h4 id="frustum-height-scaling-factor">Frustum Height Scaling Factor<a class="headerlink" href="#frustum-height-scaling-factor" title="Permanent link">&para;</a></h4>
+<p>The reflection frustum size is equal to the visible water area size. We can expand this frustum vertically by setting the <strong><em>Height Scaling Factor</em></strong> property.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can visualize the reflection frustum bounds in the scene-view by toggling the <em>'eye icon'</em> on.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">Reflection</span><span class="p">.</span><span class="n">ViewingFrustumHeightScalingFactor</span> <span class="p">=</span> <span class="m">2f</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h2 id="water-fake-perspective-effect">Water Fake Perspective Effect<a class="headerlink" href="#water-fake-perspective-effect" title="Permanent link">&para;</a></h2>
+<p><img alt="Water Fake Perspective Effect Example" src="../images/fake-perspective-effect-example.PNG" /></p>
+<p>The fake perspective effect consists of rendering certain objects that intersect the submerge level as partially submerged into water, adding a sense of depth to the water.</p>
+<p><img alt="Water Fake Perspective Effect" src="../images/material-water-surface-submerge-level.PNG" /></p>
+<p>We can enable this effect under the <strong>Surface Properties</strong> in the water material inspector by toggling the <strong><em>Submerge Level</em></strong> property on and adjusting the submerge level position.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">IsFakePerspectiveEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">SubmergeLevel</span> <span class="p">=</span> <span class="m">0.75f</span><span class="p">;</span>
+<span class="c1">// or match the submerge level to a world space position</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">SubmergeLevel</span> <span class="p">=</span> <span class="n">waterObject</span><span class="p">.</span><span class="n">MaterialModule</span><span class="p">.</span><span class="n">TransformPointWorldSpaceToSubmergeLevel</span><span class="p">(</span><span class="n">worldPoint</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="fake-perspective-effect-layers">Fake Perspective Effect Layers<a class="headerlink" href="#fake-perspective-effect-layers" title="Permanent link">&para;</a></h3>
+<h4 id="fake-perspective-effect-refraction-layers">Fake Perspective Effect - Refraction Layers<a class="headerlink" href="#fake-perspective-effect-refraction-layers" title="Permanent link">&para;</a></h4>
+<p><img alt="Water Fake Perspective Effect Layers" src="../images/component-water-refraction-fake-perspective.PNG" /></p>
+<p>Under the <strong>Refraction Properties</strong> in the water component inspector, we set the <strong><em>Partially submerged Objects</em></strong> property to select which objects layers to render as partially submerged into water when they intersect the submerge level.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">RefractionPartiallySubmergedObjects</span><span class="p">.</span><span class="n">CullingMask</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">GetMask</span><span class="p">(</span><span class="s">&quot;Default&quot;</span><span class="p">,</span> <span class="s">&quot;TransparentFX&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h4 id="fake-perspective-effect-reflection-layers">Fake Perspective Effect - Reflection Layers<a class="headerlink" href="#fake-perspective-effect-reflection-layers" title="Permanent link">&para;</a></h4>
+<p><img alt="Water Fake Perspective Effect Layers" src="../images/component-water-reflection-fake-perspective.PNG" /></p>
+<p>If we would like to render the reflection of certain partially submerged objects, we make sure to select their layers under the <strong>Reflection Properties</strong> in the water component inspector.</p>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">ReflectionPartiallySubmergedObjects</span><span class="p">.</span><span class="n">CullingMask</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h3 id="fake-perspective-effect-reflection-view-frustum-properties">Fake Perspective Effect - Reflection View Frustum Properties<a class="headerlink" href="#fake-perspective-effect-reflection-view-frustum-properties" title="Permanent link">&para;</a></h3>
+<p><img alt="Water Fake Perspective Effect View Frustum Height Scaling Factors" src="../images/component-water-reflection-fake-perspective-viewing-frustum-height-scaling-factor.PNG" /></p>
+<p>We can expand the partially submerged objects reflection frustum as well as the other objects reflection frustum vertically by settings their respective scaling factors properties.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can visualize the reflection frustums bounds in the scene-view by toggling the <em>'eye icon'</em> on.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">ReflectionPartiallySubmergedObjects</span><span class="p">.</span><span class="n">ViewingFrustumHeightScalingFactor</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<h2 id="water-emission-effect">Water Emission Effect<a class="headerlink" href="#water-emission-effect" title="Permanent link">&para;</a></h2>
+<p><img alt="Water Material Emission Properties" src="../images/material-emission.PNG" /></p>
+<p>If the water material is using one of the lit shaders, then we can set an <strong><em>Emission Color</em></strong> and also tweak its <strong><em>Intensity</em></strong> under the <strong>Emission Properties</strong> in the water material inspector.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The asset comes with <strong>5</strong> lit shaders, <strong>3</strong> for the <strong>Builtin Render Pipeline</strong> (Pixel-Lit, Vertex-Lit, Vertex-Lit-Only-Directional-Lights), <strong>1</strong> for the <strong>Universal Render Pipeline (URP)</strong>, and another one for the <strong>Lightweight Render Pipeline (LWRP)</strong>.</p>
+</div>
+<h2 id="rendering-properties">Rendering Properties<a class="headerlink" href="#rendering-properties" title="Permanent link">&para;</a></h2>
+<h3 id="rendering-properties-material-inspector">Rendering Properties - Material Inspector<a class="headerlink" href="#rendering-properties-material-inspector" title="Permanent link">&para;</a></h3>
+<p><img alt="Water Material Rendering Properties" src="../images/material-rendering.PNG" /></p>
+<p>Under the <strong>Rendering Options</strong> in the water material inspector, the <strong><em>Mask Interaction</em></strong> property controls how the water object behaves when interacting with a <a href="https://docs.unity3d.com/Manual/class-SpriteMask.html"><em>Sprite Mask</em></a> or with the <a href="/water-system/#changing-the-shape-of-the-water-object"><em>Mesh Mask</em></a>. We can set the mask interaction to one of the following options:</p>
+<ul>
+<li>None : No interaction</li>
+<li>Visible Inside Mask : the water is visible where the Sprite Mask or the Mesh Mask overlays it, but not outside of it.</li>
+<li>Visible Outside Mask : the water is visible outside the Sprite Mask or the Mesh Mask, but not inside it.</li>
+</ul>
+<p>The <strong><em>Apply Tint Color(s) On Top Of Texture(s)</em></strong> property controls in which order, the water body and the water surface, tint colors and textures are applied. If this property is toggled on, the textures are applied first and the tint colors are applied second, otherwise textures are applied last.</p>
+<h3 id="rendering-properties-component-inspector">Rendering Properties - Component Inspector<a class="headerlink" href="#rendering-properties-component-inspector" title="Permanent link">&para;</a></h3>
+<p><img alt="Water Component Rendering Properties" src="../images/component-rendering.PNG" /></p>
+<p>Under the <strong>Rendering Properties</strong> in the water component inspector, the <strong><em>Far Clip Plane</em></strong> property sets the furthest point relative to the water object that gets included in the water refraction/reflection rendering.</p>
+<p>The <strong><em>Render Pixel Lights</em></strong> property controls whether or not the rendered objects are affected by pixel lights.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The <strong><em>Render Pixel Lights</em></strong> property is ignored when working with the URP/LWRP.</p>
+</div>
+<p>We can also activate/deactivate the High Dynamic Range (HDR) and the Multisample Anti-Aliasing (MSAA) rendering.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The MSAA rendering is activated only if the Antialiasing is enabled in the project quality settings or in the URP/LWRP settings asset.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Script Reference</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">FarClipPlane</span> <span class="p">=</span> <span class="m">10f</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">RenderPixelLights</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">AllowMSAA</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="n">waterObject</span><span class="p">.</span><span class="n">RenderingModule</span><span class="p">.</span><span class="n">AllowHDR</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong><em>Sorting Properties</em></strong> and the <strong><em>Mesh Mask Properties</em></strong> are discussed in the <a href="/water-system/"><strong>Getting Started</strong></a> section of this guide. </p>
+</div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../water-simulation/" title="Water Simulation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Water Simulation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Haydeludos - Game 2D Water Kit
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
